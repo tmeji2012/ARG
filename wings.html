@@ -1,30 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>WINGS</title>
+<meta charset="UTF-8">
+<title>WINGS</title>
+<style>
+  body {
+    background:black;
+    color:#00ffcc;
+    font-family:monospace;
+    text-align:center;
+    margin-top:20vh;
+  }
+  input, button {
+    background:black;
+    color:#00ffcc;
+    border:1px solid #00ffcc;
+    padding:5px;
+    font-family:monospace;
+  }
+  .hidden { display:none; }
+</style>
 </head>
-<body style="background:black;color:#00ffcc;font-family:monospace;text-align:center;">
+<body>
 
-<h2>El ave no canta</h2>
+<h1>LAS ALAS NO ABREN</h1>
 
 <p>
-.... .- -.-- / .- -.-- / -- --- .-. ... . / -. --- / . ... / .-.. --- / .--. .-. .. -- . .-. ---
+.-- .- -.-- / - --- / - .... . / . -. -.. / --- ..-. / - .... . / ... .. --. -. .- .-..
 </p>
 
 <p>
-01000101 01101100 00100000 01110110 01110101 01100101 01101100 01101111 00100000 01100101 01110011 00100000 01100110 01100001 01101100 01110011 01101111
+01010111 01001001 01001110 01000111 01010011
 </p>
 
-<p>
-Q2lhciBjaXBoZXIgbm8gc2lydmU=
-</p>
+<p>🔐 CLAVE</p>
+<input id="key">
+<button onclick="check()">ENTRAR</button>
 
-<a href="echo.html">
-  <img src="img/bird.png" alt="bird">
-</a>
+<p id="error" style="color:red;"></p>
 
-<!-- checksum: 0x1A2F -->
+<div id="next" class="hidden">
+  <a href="echo.html" style="color:red;">SEGUIR</a>
+</div>
+
+<script>
+function check() {
+  const k = document.getElementById("key").value.toLowerCase();
+  if (k === "wings") {
+    document.getElementById("next").classList.remove("hidden");
+    document.getElementById("error").textContent = "";
+  } else {
+    document.getElementById("error").textContent = "clave incorrecta";
+  }
+}
+</script>
 
 </body>
 </html>
