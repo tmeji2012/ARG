@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>ECHO</title>
-  <style>
-    body {
-      background: black;
-      color: #00ffcc;
-      font-family: monospace;
-      text-align: center;
-      margin-top: 20vh;
-    }
-    a { color: red; text-decoration: none; }
-  </style>
+<meta charset="UTF-8">
+<title>ECHO</title>
+<style>
+  body {
+    background:black;
+    color:#00ffcc;
+    font-family:monospace;
+    text-align:center;
+    margin-top:20vh;
+  }
+  input, button {
+    background:black;
+    color:#00ffcc;
+    border:1px solid #00ffcc;
+    padding:5px;
+    font-family:monospace;
+  }
+  .hidden { display:none; }
+</style>
 </head>
 <body>
 
@@ -26,7 +33,27 @@
 01000101 01000011 01001000 01001111
 </p>
 
-<a href="final.html">SIGUE</a>
+<p>🔐 ÚLTIMA CLAVE</p>
+<input id="key">
+<button onclick="check()">ENTRAR</button>
+
+<p id="error" style="color:red;"></p>
+
+<div id="next" class="hidden">
+  <a href="final.html" style="color:white;">REVELAR</a>
+</div>
+
+<script>
+function check() {
+  const k = document.getElementById("key").value.toLowerCase();
+  if (k === "echo") {
+    document.getElementById("next").classList.remove("hidden");
+    document.getElementById("error").textContent = "";
+  } else {
+    document.getElementById("error").textContent = "clave incorrecta";
+  }
+}
+</script>
 
 </body>
 </html>
