@@ -4,21 +4,20 @@
 <meta charset="UTF-8">
 <title>ARG</title>
 <style>
-  body {
-    background:black;
-    color:white;
-    font-family:monospace;
-    text-align:center;
-    margin-top:20vh;
-  }
-  input, button {
-    background:black;
-    color:#00ffcc;
-    border:1px solid #00ffcc;
-    padding:5px;
-    font-family:monospace;
-  }
-  .hidden { display:none; }
+body {
+  background:black;
+  color:white;
+  font-family:monospace;
+  text-align:center;
+  margin-top:20vh;
+}
+input,button{
+  background:black;
+  color:#00ffcc;
+  border:1px solid #00ffcc;
+  font-family:monospace;
+}
+.hidden{display:none;}
 </style>
 </head>
 <body>
@@ -33,27 +32,23 @@
 01010011 01001001 01000111 01001110 01000001 01001100
 </p>
 
-<p>🔐 INGRESA LA CLAVE</p>
-<input id="key">
-<button onclick="check()">ENTRAR</button>
+<p>🔐 CLAVE</p>
+<input id="k">
+<button onclick="go()">ENTRAR</button>
+<p id="e" style="color:red;"></p>
 
-<p id="error" style="color:red;"></p>
-
-<div id="next" class="hidden">
-  <a href="wings.html" style="color:#00ffcc;">CONTINUAR</a>
+<div id="n" class="hidden">
+  <a href="wings.html">CONTINUAR</a>
 </div>
 
 <script>
-function check() {
-  const k = document.getElementById("key").value.toLowerCase();
-  if (k === "signal") {
-    document.getElementById("next").classList.remove("hidden");
-    document.getElementById("error").textContent = "";
-  } else {
-    document.getElementById("error").textContent = "clave incorrecta";
-  }
+function go(){
+  if(document.getElementById("k").value.toLowerCase()=="signal"){
+    n.classList.remove("hidden"); e.textContent="";
+  }else e.textContent="incorrecto";
 }
 </script>
 
+<!-- pista falsa: caesar -->
 </body>
 </html>
