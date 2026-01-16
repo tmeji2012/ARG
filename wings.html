@@ -4,56 +4,46 @@
 <meta charset="UTF-8">
 <title>WINGS</title>
 <style>
-  body {
-    background:black;
-    color:#00ffcc;
-    font-family:monospace;
-    text-align:center;
-    margin-top:20vh;
-  }
-  input, button {
-    background:black;
-    color:#00ffcc;
-    border:1px solid #00ffcc;
-    padding:5px;
-    font-family:monospace;
-  }
-  .hidden { display:none; }
+body{
+  background:black;
+  color:#00ffcc;
+  font-family:monospace;
+  text-align:center;
+  margin-top:20vh;
+}
+input,button{
+  background:black;
+  color:#00ffcc;
+  border:1px solid #00ffcc;
+}
+.hidden{display:none;}
 </style>
 </head>
 <body>
 
-<h1>LAS ALAS NO ABREN</h1>
-
-<p>
-.-- .- -.-- / - --- / - .... . / . -. -.. / --- ..-. / - .... . / ... .. --. -. .- .-..
-</p>
+<h1>LAS ALAS NO SE VEN</h1>
 
 <p>
 01010111 01001001 01001110 01000111 01010011
 </p>
 
 <p>🔐 CLAVE</p>
-<input id="key">
-<button onclick="check()">ENTRAR</button>
+<input id="k">
+<button onclick="go()">ENTRAR</button>
+<p id="e" style="color:red;"></p>
 
-<p id="error" style="color:red;"></p>
-
-<div id="next" class="hidden">
-  <a href="echo.html" style="color:red;">SEGUIR</a>
+<div id="n" class="hidden">
+  <a href="echo.html">SEGUIR</a>
 </div>
 
 <script>
-function check() {
-  const k = document.getElementById("key").value.toLowerCase();
-  if (k === "wings") {
-    document.getElementById("next").classList.remove("hidden");
-    document.getElementById("error").textContent = "";
-  } else {
-    document.getElementById("error").textContent = "clave incorrecta";
-  }
+function go(){
+  if(k.value.toLowerCase()=="wings"){
+    n.classList.remove("hidden"); e.textContent="";
+  }else e.textContent="no es correcto";
 }
 </script>
 
+<!-- nada aqui -->
 </body>
 </html>
